@@ -201,13 +201,15 @@ public final class StdIn {
 
     // the default token separator; we maintain the invariant that this value
     // is held by the scanner's delimiter between calls
+    // 相当于空格，正则表达式
     private static final Pattern WHITESPACE_PATTERN = Pattern.compile("\\p{javaWhitespace}+");
 
     // makes whitespace significant
     private static final Pattern EMPTY_PATTERN = Pattern.compile("");
 
     // used to read the entire input
-    private static final Pattern EVERYTHING_PATTERN = Pattern.compile("\\A");
+    // 本来是\\A 没看懂什么意思，改为\\n
+    private static final Pattern EVERYTHING_PATTERN = Pattern.compile("\\n");
 
     /*** end: section (1 of 2) of code duplicated from In to StdIn. */
 
